@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="admin/admin.css">
+    <title>ADMIN</title>
+</head>
+<body>
+
+    <div class="container">
+      <h1>Hussien Excel Converter</h1>
+        <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Company</th>
+            <th>First Question Score</th>
+            <th>Second Question Score</th>
+            <th>Third Question Score</th>
+            <th>forth Question Score</th>
+            <th>fifth Question Score</th>
+          </tr>
+        </thead>
+        <tbody id="table_content">
+          <tr>
+              <td>Tiger</td>
+              <td>Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>$320,800</td>
+          </tr>
+          <tr>
+              <td>Garrett</td>
+              <td>Winters</td>
+              <td>Accountant</td>
+              <td>Tokyo</td>
+              <td>$170,750</td>
+          </tr>
+          <tr>
+              <td>Ashton</td>
+              <td>Cox</td>
+              <td>Junior Technical Author</td>
+              <td>San Francisco</td>
+              <td>$86,000</td>
+          </tr>
+          <tr>
+              <td>Colleen</td>
+              <td>Hurst</td>
+              <td>Javascript Developer</td>
+              <td>San Francisco</td>
+              <td>$205,500</td>
+          </tr>
+          <tr>
+              <td>Sonya</td>
+              <td>Frost</td>
+              <td>Software Engineer</td>
+              <td>Edinburgh</td>
+              <td>$103,600</td>
+          </tr>
+        </tbody>
+      </table>
+      <button onclick="exportData()">Table To Excel</button>
+    </div>
+    
+    <script type="text/javascript" src="admin/table2excel.js"></script>
+    <script type="text/javascript" src="admin/admin.js"></script>
+    </body>
+</html>
+

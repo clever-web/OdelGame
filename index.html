@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odel Login</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="" id="codeCheck">
+            <div class="alert">لا يوجد كود بهذا الاسم، حاول نسخه بدلا من كتابته</div>
+
+            <div class="inputBox">
+                <input type="text" id="code_input" placeholder="ادخل الكود..." />
+            </div>
+
+            <div class="inputBox">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+
+        <form action="" id="SaveUserData">
+            <div class="alert">لا يوجد كود بهذا الاسم، حاول نسخه بدلا من كتابته</div>
+
+            <div class="inputBox">
+                <input type="text" id="name_input" placeholder="ادخل اسمك..." />
+            </div>
+
+            <div class="inputBox">
+                <input type="email" id="email_input" placeholder="ادخل ايميلك..." />
+            </div>
+
+            
+            <div class="inputBox">
+                <input type="text" id="company_input" placeholder="ادخل اسم المنشئة..." />
+            </div>
+
+            <div class="inputBox">
+                <button type="submit">SAVE</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas" width=960 height=600></canvas>
+        <div id="unity-loading-bar">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+            </div>
+        </div>
+        <div id="unity-warning"> </div>
+        <div id="unity-footer">
+            <div id="unity-webgl-logo"></div>
+            <div id="unity-fullscreen-button"></div>
+            <div id="unity-build-title">Odel</div>
+        </div>
+    </div>
+
+    <!-- <div class="footer">Powered by ODEL</div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
