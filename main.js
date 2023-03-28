@@ -37,7 +37,6 @@ function SaveUserData(e) {
 
 
  SaveUserDataInDB(name_input,email_input,companyname_input);
-
 }
 
 
@@ -97,42 +96,43 @@ const getElementVal = (id) => {
 
 function SaveUserDataInDB(username, email,companyname) {
 
-if(username == null || email == "" || companyname == "")
-  return;
+  if(username == null || email == "" || companyname == "")
+    return;
 
-//search for email if found: pass : else : create account
-var editedEmail = email.replace(/\./g, ",");
+  //search for email if found: pass : else : create account
+  var editedEmail = email.replace(/\./g, ",");
 
-firebase.database().ref(`company_codes/${code_input}/users`).once("value").then(function(snapshot) {
-  snapshot.forEach(function(childSnapshot) {
-  var childKey = childSnapshot.key;
-  console.log(childKey);
+  firebase.database().ref(`company_codes/${code_input}/users`).once("value").then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.key;
+    console.log(childKey);
 
-  if(childKey == editedEmail)
-  {
-    console.log("found email");
-      email_passed = email;
-            document.querySelector("#SaveUserData").style.display = "none";
-            document.querySelector("#unity-container").style.display = "block";
-            startUnityGame();
-            audio.src = "/sounds/Retro_Single_v1_wav.wav";
-            return;
-  }
-})
-email_passed = email;
-var User = {
-          username: username,
-          email: email,
-          company_name: companyname,
-};
+    if(childKey == editedEmail)
+    {
+      console.log("found email");
+        email_passed = email;
+              document.querySelector("#SaveUserData").style.display = "none";
+              document.querySelector("#unity-container").style.display = "block";
+              startUnityGame();
+              audio.src = "/sounds/Retro_Single_v1_wav.wav";
+              return;
+    }
+  })
+  email_passed = email;
+  var User = {
+            username: username,
+            email: email,
+            company_name: companyname,
+  };
 
-firebase.database().ref(`company_codes/${code_input}/users/${editedEmail}`).set(User);
-document.querySelector("#SaveUserData").style.display = "none";
-document.querySelector("#unity-container").style.display = "block";
-startUnityGame();
-audio.src = "/sounds/Retro_Single_v1_wav.wav";
+  firebase.database().ref(`company_codes/${code_input}/users/${editedEmail}`).set(User);
+  document.querySelector("#SaveUserData").style.display = "none";
+  document.querySelector("#footer").style.display = "none";
+  document.querySelector("#unity-container").style.display = "block";
+  startUnityGame();
+  audio.src = "/sounds/Retro_Single_v1_wav.wav";
 
-})
+  })
     
 }
 
