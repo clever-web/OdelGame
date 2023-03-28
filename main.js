@@ -65,6 +65,7 @@ firebase.database().ref('company_codes').once('value',   function(snapshot) {
     if(childKey == code){
               document.querySelector("#codeCheck").style.display = "none";
               document.querySelector("#SaveUserData").style.display = "block";
+              document.querySelector('.container').classList.add("background-block");
       
               console.log("found company login key");
               audio.play();
@@ -238,7 +239,20 @@ createUnityInstance(canvas, config, (progress) => {
 document.body.appendChild(script);
 
 
-
+function inputChange(description){
+  if(description === 'codeCheck'){
+    var flag = document.getElementById('code_input').value === '' ? false : true;
+    if(flag) document.getElementById('code_btn').style.opacity = 1;
+    else document.getElementById('code_btn').style.opacity = 0.5;
+  }
+  else{
+    var flag = (document.getElementById('name_input').value === '' ? false : true) || 
+        (document.getElementById('email_input').value === '' ? false : true) || 
+        (document.getElementById('company_input').value === '' ? false : true);
+    if(flag) document.getElementById('save_btn').style.opacity = 1;
+    else document.getElementById('save_btn').style.opacity = 0.5;
+  }
+}
 
 
 function PlayAudio(){

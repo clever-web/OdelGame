@@ -10,19 +10,23 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(206, 201, 201, 0.6), rgba(206, 201, 201, 0.6)), url(./assets/Picture3.jpg);
+    background: linear-gradient(rgba(206, 201, 201, 0.6), rgba(206, 201, 201, 0.6)), url(./assets/final-pattern.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 140%;
+    background-position-y: center;
 }
 
 .container{
     width: 35%;
-    height: 60%;
-    padding: 20px;
     border-radius: 25px;
-    box-shadow:  0px 5px 25px #ffffff;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    
+}
+.background-block{
+    box-shadow:  0px 5px 25px #ffffff;
     background-color: #ffffff;
 }
 
@@ -37,7 +41,7 @@ body{
 
 .inputBox{
     width: 100%;
-    margin: 10px 0;
+    margin: 3em 0;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -49,10 +53,11 @@ body{
     border: none;
     outline: none;
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.2);
+    background-color: #f3f3f3;
     padding: 0px 10px;
     font-size: 16px;
     color: #444;
+    text-align: center;
 }
 
 .inputBox textarea{
@@ -62,27 +67,39 @@ body{
     border: none;
     outline: none;
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.2);
+    background-color: #f3f3f3;
     padding: 0px 10px;
     font-size: 16px;
     color: #444;
 }
 
-.inputBox button{
-    width: 100%;    
-    padding: 10px 20px;
+.header-content {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 3em;
+}
+
+.submit-button button {   
+    padding: 10px 55px;
     border: none;
+    border-radius: 8px;
+    text-align: center;
     outline: none;
-    background: rgb(0, 119, 255);
+    background: #03efef;
     color: #FFF;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    
+    opacity: 0.5;
+}
+.submit-button {
+    display: flex;
+    justify-content: center;
 }
 
 .inputBox button:hover{
-    background: rgb(0, 17, 255);
+    background: #03efef;
     transition: all 0.3s ease;
 }
 
@@ -92,26 +109,79 @@ body{
 
 .alert{
     width: 100%;
-    background: rgb(255, 0, 0);
+    color: rgb(255, 0, 0);
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
     font-size: 18px;
     font-weight: 900;
     display: none;
+    margin-top: -1em;
+}
+#codeCheck{
+    padding:3em 2em
+}
+#SaveUserData{
+    padding: 3em 2em;
+}
+#SaveUserData .title{
+    text-align: center;
+    margin-bottom: 2em;
+}
+.footer{
+    position:fixed;
+    bottom: 1em;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+}
+.footer span{
+    font-size: x-large;
+    font-weight: 600;
+    margin: 0 1em;
 }
 
 
-@media (max-width: 1023px) {
+@media only screen and (max-width: 1024px) {
+    .container{
+        width: 50%;
+    }
+    #codeCheck{
+        padding:2em 0.5em;
+    }
+    #SaveUserData{
+        padding:2em 0.5em;
+    }
+    .inputBox{
+        margin: 1.5em 0;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .container{
+        width: 60%;
+    }
+    #codeCheck{
+        padding:2em 0.5em;
+    }
+    #SaveUserData{
+        padding:2em 0.5em;
+    }
+    .inputBox{
+        margin: 1.5em 0;
+    }
+}
+@media only screen and (max-width: 450px) {
     .container{
         width: 80%;
-        height: 40%;
-        padding: 20px;
-        border-radius: 20px;
-        box-shadow:  0px 5px 25px rgba(0,0,0,0.2);
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: column;
     }
-  }
+    #codeCheck{
+        padding:2em 0.5em;
+    }
+    #SaveUserData{
+        padding:2em 0.5em;
+    }
+    .inputBox{
+        margin: 1.5em 0;
+    }
+}
+

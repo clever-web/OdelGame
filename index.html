@@ -14,35 +14,44 @@
 <body>
     <div class="container">
         <form action="" id="codeCheck">
-            <div class="alert">لا يوجد كود بهذا الاسم، حاول نسخه بدلا من كتابته</div>
-
-            <div class="inputBox">
-                <input type="text" id="code_input" placeholder="ادخل الكود..." />
+            <div class="header-content">
+                <p>مرحبا بك في لعبة أودل لقياس مستوى</p>
+                <p>الفهم حول إجراءات العمل من أجل البدء</p>
+                <p>نرجوا إدخال الرمز الخاص بك أدناه</p>
             </div>
 
             <div class="inputBox">
-                <button type="submit">Login</button>
+                <input type="text" id="code_input" placeholder="ادخل الكود..." onkeydown="inputChange('codeCheck')" />
+            </div>
+
+            <div class="alert">الرجاء إدخال رمز صحيح
+            </div>
+
+            <div class="submit-button">
+                <button type="submit" id="code_btn">التالي</button>
             </div>
         </form>
 
         <form action="" id="SaveUserData">
             <div class="alert">لا يوجد كود بهذا الاسم، حاول نسخه بدلا من كتابته</div>
-
+            <h1 class="title">الرجاء ملء البيانات أدناه
+            </h1>
             <div class="inputBox">
-                <input type="text" id="name_input" placeholder="ادخل اسمك..." />
+                <input type="text" id="name_input" placeholder="ادخل اسمك..." onkeydown="inputChange('SaveUserData')"/>
             </div>
 
             <div class="inputBox">
-                <input type="email" id="email_input" placeholder="ادخل ايميلك..." />
+                <input type="email" id="email_input" placeholder="ادخل ايميلك..." onkeydown="inputChange('SaveUserData')"/>
             </div>
 
-            
-            <div class="inputBox">
-                <input type="text" id="company_input" placeholder="ادخل اسم المنشئة..." />
-            </div>
 
             <div class="inputBox">
-                <button type="submit">SAVE</button>
+                <input type="text" id="company_input" placeholder="ادخل اسم المنشئة..." onkeydown="inputChange('SaveUserData')"/>
+            </div>
+
+            <div class="submit-button">
+                <button type="submit" id="save_btn">التالي
+                </button>
             </div>
         </form>
     </div>
@@ -52,7 +61,7 @@
         <div id="unity-loading-bar">
             <div id="unity-logo"></div>
             <div id="unity-progress-bar-empty">
-            <div id="unity-progress-bar-full"></div>
+                <div id="unity-progress-bar-full"></div>
             </div>
         </div>
         <div id="unity-warning"> </div>
@@ -63,7 +72,11 @@
         </div>
     </div>
 
-    <!-- <div class="footer">Powered by ODEL</div> -->
+    <div class="footer">
+        <span>Powered by </span>
+        <img src="./assets/footer.png" alt="footer logo" />
+
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="./main.js"></script>
